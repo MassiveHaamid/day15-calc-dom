@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .calculator {
+            background-color: #dadada;
+            margin: 20px auto;
+            max-width: 400px;
+            border: 1px solid #ccc; 
+            padding: 18px; 
+        }
+        
+        .btn-calc {
+            background-color: #ddd;
+            border: 2px;
+        }
+    
+        .btn-equal {
+            background-color: #007BFF;
+            color: #fff;
+        }
+    
+        #alert {
+            display: none;
+        }
+    
+        #display {
+            background-color: #b9b9b9;
+            height: 60px;
+            font-size: 25px;
+        }
+    
+        .red-text {
+            color: red;
+        }        
+    </style>        
+</head>
+<body>
+    <div class="container calculator">
+        <h1 class="text-center">Calculator</h1>
+        <div class="alert alert-danger" id="alert" style="display: none;">Only numbers are allowed</div>
+        <input type="text" class="form-control mb-2" id="display" disabled>
+        <!-- ... -->
+<div class="row">
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('1')">1</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('2')">2</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('3')">3</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-block btn-calc" onclick="operate('+')">+</button></div>
+</div>
+<div class="row">
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('4')">4</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('5')">5</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('6')">6</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-block btn-calc" onclick="operate('-')">-</button></div>
+</div>
+<div class="row">
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('7')">7</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('8')">8</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('9')">9</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-block btn-calc" onclick="operate('*')">*</button></div>
+</div>
+<div class="row">
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('0')">0</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('00')">00</button></div>
+    <div class="col-3"><button class="btn btn-primary btn-block btn-calc" onclick="appendToDisplay('.')">.</button></div>
+    <div class="col-3"><button class="btn btn-success btn-block btn-equal" onclick="calculate()">=</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-block btn-calc" onclick="operate('/')">/</button></div>
+    <div class="col-3"><button class="btn btn-secondary btn-block btn-calc" onclick="appendToDisplay('<--')">←</button></div>
+    <div class="col-6"><button class="btn btn-secondary btn-block btn-calc" onclick="clearDisplay()"><span class="red-text">C</span></button>
+</div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
